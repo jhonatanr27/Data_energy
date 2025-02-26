@@ -10,8 +10,8 @@ Original file is located at
 """
 
 # Commented out IPython magic to ensure Python compatibility.
-# %pip install rasterio fiona
-#!pip install earthpy
+%pip install rasterio fiona
+!pip install earthpy
 
 import os
 import rasterio
