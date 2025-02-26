@@ -10,9 +10,11 @@ Original file is located at
 """
 
 # Commented out IPython magic to ensure Python compatibility.
-%pip install rasterio fiona
-!pip install earthpy
-
+#%pip install rasterio fiona
+#!pip install earthpy
+import seaborn as sns
+import scipy as sp
+import pandas as pd
 import os
 import rasterio
 import rasterio.plot
@@ -22,6 +24,7 @@ import earthpy as et
 import numpy as np
 import requests
 from matplotlib import pyplot
+
 
 url_wind = "https://raw.githubusercontent.com/JulianaTQ/Project_Data_Analyst/main/Wind_Average.tif"
 url_solar = "https://raw.githubusercontent.com/JulianaTQ/Project_Data_Analyst/main/Solar_radiation_average.tif"
@@ -109,9 +112,6 @@ fig.colorbar(im2.images[0], cax=cbar_ax2, orientation="horizontal", label="Rad_s
 plt.show()
 
 #Cargar el archivo de datos de consumo de energía y producción por municipios (viento y radiación) y departamentos (productos desecho de cultivos)
-import seaborn as sns
-import scipy as sp
-import pandas as pd
 
 df= pd.read_csv("resumen_variables.csv", encoding="latin-1", sep=";")
 
